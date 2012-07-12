@@ -48,6 +48,14 @@ package { ['chromium-browser', 'google-chrome-stable']:
 #http://mathforum.org/pow08/index.php/GoodwinFileServer
 
 #keyboard shortcuts
+package { ['xbindkeys', 'gmrun']:
+  ensure => present,
+}
+
+file { "/home/$user/.xbindkeysrc":
+  content => "\"/usr/bin/gmrun\"\n\tm:0x10 + c:68\n",
+  owner   => $user
+}
 
 #printer
 
