@@ -1,4 +1,6 @@
 $user = 'amir'
+$username = "Amir Tahvildaran"
+$useremail = "amirdt22@gmail.com"
 
 Exec {
   path => ['/bin', '/usr/bin', '/sbin', '/usr/sbin'],
@@ -31,6 +33,10 @@ package {'vagrant':
 #version control
 package { ['git', 'subversion']:
   ensure  => present,
+}
+
+file { "/home/$user/.gitconfig":
+  content => "[user]\n\tname = $username\n\temail = $useremail\n",
 }
 
 #browsers
