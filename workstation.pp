@@ -53,3 +53,15 @@ package { ['ant', 'yakuake', 'wireshark', 'eclipse-platform', 'augeas-tools']:
 #networking: wireless, vpn, resolv.conf
 
 #adeona
+
+file { "/home/$user/.vimrc":
+  content => "set expandtab\nset ts=2\n",
+}
+
+package { 'vim-gnome':
+  ensure => present,
+}
+
+file { '/etc/profile.d/editor.sh':
+  content => 'export EDITOR=/bin/vim',
+}
