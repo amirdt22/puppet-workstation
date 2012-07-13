@@ -60,7 +60,7 @@ file { "/home/$user/.xbindkeysrc":
 #printer
 
 #dev tools: ant wireshark eclipse/sts yakuake vpp
-package { ['ant', 'yakuake', 'wireshark', 'eclipse-platform', 'augeas-tools']:
+package { ['ant', 'yakuake', 'wireshark', 'eclipse-platform', 'augeas-tools', 'firestarter']:
   ensure => present,
 }
 
@@ -77,5 +77,9 @@ package { 'vim-gnome':
 }
 
 file { '/etc/profile.d/editor.sh':
-  content => 'export EDITOR=/bin/vim',
+  content => 'export EDITOR=/usr/bin/vim',
+}
+
+package { 'openssh-server':
+  ensure => present,
 }
