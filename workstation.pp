@@ -60,7 +60,7 @@ file { "/home/$user/.xbindkeysrc":
 #printer
 
 #dev tools: ant wireshark eclipse/sts yakuake vpp
-package { ['ant', 'yakuake', 'wireshark', 'eclipse-platform', 'augeas-tools', 'firestarter']:
+package { ['ant', 'yakuake', 'wireshark', 'eclipse-platform', 'augeas-tools', 'firestarter', 'xchat']:
   ensure => present,
 }
 
