@@ -66,7 +66,33 @@ package { ['ant', 'yakuake', 'wireshark', 'eclipse-platform', 'augeas-tools', 'f
 
 #networking: wireless, vpn, resolv.conf
 
-#adeona
+##adeona - TODO repackage as RPM/deb
+#http://adeona.cs.washington.edu/packages/adeona-0.2.1.tar.gz
+#exec { 'download-adeona':
+#  command => 'wget -O /usr/local/src/adeona-0.2.1.tar.gz \
+#              http://adeona.cs.washington.edu/packages/adeona-0.2.1.tar.gz',
+#  creates => '/usr/local/src/adeona-0.2.1.tar.gz',
+#}
+#
+#exec { 'extract-adeona':
+#  command => 'tar -C /usr/local/ -zxf /usr/local/src/adeona-0.2.1.tar.gz',
+#  creates => '/usr/local/adeona',
+#  require => Exec['download-adeona'],
+#}
+#
+#package { 'traceroute':
+#  ensure => present,
+#}
+#
+#package { 'libssl-dev':
+#  ensure => present,
+#}
+#
+#exec { 'install-adeona':
+#  cwd     => '/usr/local/adeona',
+#  command => 'sh configure && ',
+#  require => [Package['libssl-dev'], Package['traceroute'], Exec['extract-adeona']],
+#}
 
 file { "/home/$user/.vimrc":
   content => "set expandtab\nset ts=2\n",
