@@ -64,6 +64,11 @@ package { ['ant', 'yakuake', 'wireshark', 'eclipse-platform', 'augeas-tools', 'f
   ensure => present,
 }
 
+file { "/home/$user/.xchat2/servlist_.conf":
+  require => Package['xchat'],
+  content => template('servlist_.conf'),
+}
+
 #networking: wireless, vpn, resolv.conf
 
 ##adeona - TODO repackage as RPM/deb
