@@ -22,7 +22,7 @@ file { 'google-repo':
 }
 
 exec { 'apt-get update':
-  require => File['google-repo'],
+  require => [File['google-repo'], File['spotify-repo']],
 }
 
 #http://mathforum.org/pow08/index.php/Vagrant
@@ -113,4 +113,20 @@ file { '/etc/profile.d/editor.sh':
 
 package { 'openssh-server':
   ensure => present,
+}
+
+exec { 'spotify-apt-key':
+  command => 'apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59',
+  unless  => 'apt-key list | grep spotify.com',
+}
+
+file { 'spotify-repo':
+  path    => '/etc/apt/sources.list.d/spotify.list',
+  content => 'deb http://repository.spotify.com stable non-free',
+  require => Exec['spotify-apt-key'],
+}
+
+package { 'spotify-client':
+  ensure  => present,
+  require => Exec['apt-get update'],
 }
