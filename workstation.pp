@@ -10,6 +10,15 @@ group { 'puppet':
   ensure => present,
 }
 
+service { 'network-manager':
+  ensure => running,
+}
+
+file { '/etc/resolvconf/resolv.conf.d/tail':
+  content => "search mathforum.org goodwin.drexel.edu\n",
+  notify  => Service['network-manager'],
+}
+
 exec { 'google-apt-key':
   command => 'wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -',
   unless  => 'apt-key list | grep google.com',
