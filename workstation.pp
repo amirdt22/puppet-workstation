@@ -75,7 +75,7 @@ package { ['ant', 'yakuake', 'wireshark', 'eclipse-platform', 'augeas-tools', 'f
 
 file { "/home/$user/.xchat2/servlist_.conf":
   require => Package['xchat'],
-  content => template('servlist_.conf'),
+  content => template('xchat-servers.conf'),
 }
 
 #networking: wireless, vpn, resolv.conf
@@ -123,3 +123,5 @@ file { '/etc/profile.d/editor.sh':
 package { 'openssh-server':
   ensure => present,
 }
+
+
