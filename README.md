@@ -1,13 +1,12 @@
 puppet-workstation
 ==================
 
-managing my workstation via puppet
+managing my (ubuntu) workstation via puppet
 
  sudo apt-get install rubygems
  sudo gem install puppet
 
-
 === Issues
 
 * how to run xbindkeys
-* ./wr script
+* scripts/templates/etc (./wr)
