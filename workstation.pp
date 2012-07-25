@@ -91,6 +91,12 @@ package { 'openssh-server':
   ensure => present,
 }
 
+file { "/home/$user/.ssh/config":
+  content => template('sshconfig'),
+  owner   => $user,
+  group   => $user,
+}
+
 #TODO: wireless, vpn
 
 

@@ -1,0 +1,15 @@
+Host sdp sdptest copper nickel proapp testapp search prodb testdb legacy support1 support2 technetium mathedleadership.org cobalt
+  User amir
+
+Host cygnus
+  Port 3001
+
+Host *
+	ForwardAgent yes
+	ForwardX11 yes
+	User adt22
+
+
+#'yes' seems to slow down login, I don't use this anyway...?
+GSSAPIAuthentication no
+
