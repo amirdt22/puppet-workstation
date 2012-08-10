@@ -97,6 +97,10 @@ file { "/home/$user/.ssh/config":
   group   => $user,
 }
 
+package { 'network-manager-vpnc': 
+  ensure => present,
+}
+
 #TODO: wireless, vpn
 
 
