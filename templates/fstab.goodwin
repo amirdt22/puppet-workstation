@@ -1,0 +1,6 @@
+//fs.goodwin.drexel.edu/workspace /smb/fs/adt22 smbfs auto,credentials=/root/.adt22,uid=1000,umask=000,user 0 0 
+//fs.goodwin.drexel.edu/isos /smb/fs/isos smbfs auto,credentials=/root/.adt22,uid=1000,umask=000,user 0 0 
+//fs.goodwin.drexel.edu/magazines /smb/fs/magazines smbfs auto,credentials=/root/.adt22,uid=1000,umask=000,user 0 0
+//fs.goodwin.drexel.edu/projects /smb/fs/projects smbfs auto,credentials=/root/.adt22,uid=1000,umask=000,user 0 0
+//fs.goodwin.drexel.edu/git /smb/fs/git smbfs auto,credentials=/root/.adt22,uid=1000,umask=000,user 0 0
+//fs.goodwin.drexel.edu/mathforumshare /smb/fs/mathforumshare smbfs auto,credentials=/root/.adt22,uid=1000,umask=000,user 0 0
