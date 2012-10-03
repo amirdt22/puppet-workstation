@@ -123,7 +123,7 @@ exec { 'apt-get update':
 ################################################################################
 # MISC
 ################################################################################
-package { ['gmrun', 'imagemagick']:
+package { ['gmrun', 'imagemagick', 'gtk-recordmydesktop', 'libav-tools', 'cheese']:
   ensure => present,
 }
 
