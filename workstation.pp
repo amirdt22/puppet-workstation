@@ -127,13 +127,8 @@ exec { 'apt-get update':
 ################################################################################
 # MISC
 ################################################################################
-package { ['xbindkeys', 'gmrun']:
+package { ['gmrun', 'imagemagick', 'gtk-recordmydesktop', 'libav-tools', 'cheese']:
   ensure => present,
-}
-
-file { "/home/$user/.xbindkeysrc":
-  content => "\"/usr/bin/gmrun\"\n\tm:0x10 + c:68\n",
-  owner   => $user
 }
 
 ################################################################################
