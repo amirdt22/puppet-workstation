@@ -13,9 +13,8 @@ group { 'puppet':
 ################################################################################
 # browsers
 ################################################################################
-package { ['chromium-browser', 'google-chrome-stable']:
+package { ['chromium-browser']:
   ensure  => present,
-  require => Exec['apt-get update'],
 }
 
 ################################################################################
@@ -58,8 +57,12 @@ package { 'xchat':
   ensure => present,
 }
 
+file { "/home/$user/.xchat2":
+  ensure => directory,
+}
+
 file { "/home/$user/.xchat2/servlist_.conf":
-  require => Package['xchat'],
+  require => [Package['xchat'], File["/home/$user/.xchat2"]],
   content => template('xchat-servers.conf'),
 }
 
@@ -103,26 +106,6 @@ package { 'network-manager-vpnc':
 
 #TODO: wireless, vpn
 
-
-################################################################################
-# repos
-################################################################################
-exec { 'google-apt-key':
-  command => 'wget -q -O - \
-              https://dl-ssl.google.com/linux/linux_signing_key.pub \
-              | sudo apt-key add -',
-  unless  => 'apt-key list | grep google.com',
-}
-
-file { 'google-repo':
-  path    => '/etc/apt/sources.list.d/google.list',
-  content => 'deb http://dl.google.com/linux/chrome/deb/ stable main',
-  require => Exec['google-apt-key'],
-}
-
-exec { 'apt-get update':
-  require => File['google-repo'],
-}
 
 ################################################################################
 # MISC
