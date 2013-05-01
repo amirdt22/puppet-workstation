@@ -3,9 +3,10 @@ puppet-workstation
 
 managing my (ubuntu) workstation via puppet
 
- sudo apt-get install rubygems
- sudo gem install puppet
  git clone git@github.com:amirdt22/puppet-workstation.git
+ sudo su
+ apt-get install rubygems
+ gem install puppet
  cd puppet-workstation
  puppet apply --templatedir=templates workstation.pp
 
