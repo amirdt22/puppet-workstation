@@ -20,7 +20,6 @@ package { ['chromium-browser']:
 ################################################################################
 # dev tools
 ################################################################################
-###### TODO:sts vpp
 
 ###### JAVA
 package { 'groovy':
@@ -104,8 +103,6 @@ package { 'network-manager-vpnc':
   ensure => present,
 }
 
-#TODO: wireless, vpn
-
 
 ################################################################################
 # MISC
@@ -116,5 +113,10 @@ package { ['gmrun', 'imagemagick', 'gtk-recordmydesktop', 'libav-tools', 'cheese
 
 ################################################################################
 # TODO
-# - printer
+################################################################################
+
+notify { "TODO: software: STS & visual paradigm": }
+notify { "TODO: printer set up": }
+notify { "TODO: fileservers": }
 # - http://mathforum.org/pow08/index.php/GoodwinFileServer
+notify { "TODO: network: wireless & VPN": }
