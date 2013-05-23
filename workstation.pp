@@ -37,7 +37,7 @@ file { "/home/$user/.gitconfig":
 
 ###### VIM
 file { "/home/$user/.vimrc":
-  content => "set expandtab\nset ts=2\n",
+  content => template('vimrc'),
 }
 
 package { 'vim-gnome':
